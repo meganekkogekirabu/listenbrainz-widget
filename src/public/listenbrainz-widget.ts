@@ -28,8 +28,14 @@ async function getListen(config: Config): Promise<ListenMetadata> {
 }
 
 async function parseListen(listen: ListenMetadata): Promise<ActivityData> {
+    const art = await fetch(`https://coverartarchive.org/release/${listen.additional_info.release_mbid}`)
+        .then(response => response.json())
+        .catch(err => {
+            console.error("Could not fetch cover art:", err);
+        });
+
     return {
-        "album-art": `https://coverartarchive.org/release/${listen.additional_info.release_mbid}/front`,
+        "album-art": art.images[0].thumbnails.small,
         "album-artist": listen.artist_name,
         "album-name": listen.release_name,
     }
