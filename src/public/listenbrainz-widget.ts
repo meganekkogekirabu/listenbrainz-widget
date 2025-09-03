@@ -11,10 +11,11 @@ function populate(data: ActivityData) {
 
         if (k === "album-art")
             (el as HTMLImageElement).src = v;
-        else
+        else {
             el.textContent = v;
             if (el.scrollWidth > el.clientWidth)
                 el.title = v;
+        }
     }
 }
 
