@@ -13,6 +13,8 @@ function populate(data: ActivityData) {
             (el as HTMLImageElement).src = v;
         else
             el.textContent = v;
+            if (el.scrollWidth > el.clientWidth)
+                el.title = v;
     }
 }
 

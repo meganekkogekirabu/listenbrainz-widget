@@ -1,6 +1,14 @@
 :root {
-  --background: #FEFFEC;
+  --border: solid 1px oklch(67.02% 0.2462 356.4);
+	--background: oklch(99.42% 0.0248 109.29);
   --border: solid 1px #F39;
+  --gradient-background: linear-gradient(90deg,
+    oklch(89.81% 0.0944 326.33),
+    var(--background));
+}
+
+* {
+  font-family: Zpix;
 }
 
 #listenbrainz-side>a {
@@ -12,15 +20,9 @@
   text-decoration: underline;
 }
 
-* {
-  font-family: Zpix, sans-serif;
-}
-
 #listenbrainz-widget {
   background: #FFC8FF;
-  background: linear-gradient(90deg,
-      rgba(255, 200, 255, 1) 0%,
-      rgba(254, 255, 236, 1) 100%);
+  background: var(--gradient-background);
   width: 334px;
   border: var(--border);
   height: 177px;
@@ -35,6 +37,7 @@
   margin: 20px;
   background-color: white;
   box-shadow: 5px 1px 20px darkgray;
+  object-fit: cover;
 }
 
 #listenbrainz-side {
@@ -47,9 +50,12 @@
 #listenbrainz-side>* {
   cursor: default;
   width: fit-content;
+  margin: 0;
 }
 
-h4,
-p {
-  margin: 0;
+#listenbrainz-side>h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+  white-space: nowrap;
 }
