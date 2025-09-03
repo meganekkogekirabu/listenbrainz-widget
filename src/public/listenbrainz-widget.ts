@@ -2,18 +2,12 @@ let config: Config = {
     username: "janpasi"
 }
 
-function getById(id: string) {
-    const ret = document.getElementById(id);
-
-    if (!ret)
-        throw new Error(`cannot find #${id}`);
-    else
-        return ret;
-}
-
 function populate(data: ActivityData) {
     for (const [k, v] of Object.entries(data)) {
-        const el = getById(k);
+        const el = document.getElementById(k);
+        
+        if (!el)
+            throw new Error(`cannot find element with id #${k}`);
 
         if (k === "album-art")
             (el as HTMLImageElement).src = v;
