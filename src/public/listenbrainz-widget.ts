@@ -29,7 +29,7 @@ async function getListen(config: Config): Promise<ListenMetadata> {
 
 async function parseListen(listen: ListenMetadata): Promise<ActivityData> {
     return {
-        "album-art": `https://coverartarchive.org/release/${listen.mbid_mapping.release_mbid}/front`,
+        "album-art": `https://coverartarchive.org/release/${listen.additional_info.release_mbid}/front`,
         "album-artist": listen.artist_name,
         "album-name": listen.release_name,
     }

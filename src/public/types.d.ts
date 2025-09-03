@@ -9,6 +9,7 @@ interface ActivityData {
 }
 
 interface ListenMetadata {
+    additional_info: { release_mbid: string };
     artist_name: string;
     release_name: string;
     mbid_mapping: { release_mbid: string };
