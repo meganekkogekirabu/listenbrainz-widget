@@ -1,0 +1,9 @@
+/node_modules
+/.env
+
+# ignore transpiled TS
+*.js
+
+server.ts
+package-lock.json
+package.json

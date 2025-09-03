@@ -1,0 +1,56 @@
+:root {
+  --background: #FEFFEC;
+  --border: solid 1px #F39;
+}
+
+#listenbrainz-side>a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#listenbrainz-side>a:hover {
+  text-decoration: underline;
+}
+
+* {
+  font-family: Zpix, sans-serif;
+}
+
+#listenbrainz-widget {
+  background: #FFC8FF;
+  background: linear-gradient(90deg,
+      rgba(255, 200, 255, 1) 0%,
+      rgba(254, 255, 236, 1) 100%);
+  width: 334px;
+  border: var(--border);
+  height: 177px;
+  display: flex;
+  align-items: center;
+}
+
+#album-art {
+  width: 120px;
+  height: 120px;
+  border: var(--border);
+  margin: 20px;
+  background-color: white;
+  box-shadow: 5px 1px 20px darkgray;
+}
+
+#listenbrainz-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 30px);
+}
+
+#listenbrainz-side>* {
+  user-select: none;
+  cursor: default;
+  width: fit-content;
+}
+
+h4,
+p {
+  margin: 0;
+}
