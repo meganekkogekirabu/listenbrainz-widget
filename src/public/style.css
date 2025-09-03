@@ -45,7 +45,6 @@
 }
 
 #listenbrainz-side>* {
-  user-select: none;
   cursor: default;
   width: fit-content;
 }
